@@ -4,6 +4,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Patrick Hand', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -13,10 +17,6 @@ body {
 }
 
 body nav {
-    font-family: 'Bebas Neue', sans-serif;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Patrick Hand', cursive;
-    font-family: 'Roboto', sans-serif;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 10fr;
@@ -57,7 +57,8 @@ nav .tasks-and-projects .projects button {
 }
 
 nav .tasks-and-projects .tasks button,
-nav .tasks-and-projects .projects button {
+nav .tasks-and-projects .projects button,
+body main .add-task-form button {
     align-items: center;
     background-color: #fff;
     border: 2px solid #000;
@@ -73,7 +74,8 @@ nav .tasks-and-projects .projects button {
 }
 
 nav .tasks-and-projects .tasks button:hover,
-nav .tasks-and-projects .projects button:hover {
+nav .tasks-and-projects .projects button:hover,
+body main .add-task-form button:hover {
     border-color: #06f;
     transform: scale(1.05);
     transition: all 0.3s;
@@ -82,7 +84,8 @@ nav .tasks-and-projects .projects button:hover {
 }
 
 nav .tasks-and-projects .tasks button:active,
-nav .tasks-and-projects .projects button:active {
+nav .tasks-and-projects .projects button:active,
+body main .add-task-form button:active {
     border-color: #06f;
     color: #06f;
     fill: #06f;
@@ -148,5 +151,77 @@ body main .add-task-and-list .add-task button:active {
 }
 
 body main .add-task-and-list .list-of-tasks {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 30px;
+    border-top: 2.5px solid #1e3a8a;
+    max-height: 600px;
+    overflow: scroll;
+    padding: 25px;
+}
+
+body main .add-task-and-list .list-of-tasks .task {
+    height: 120px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #e5e7eb;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 20px;
+}
+
+body main .add-task-and-list .list-of-tasks .task .title-desc-date,
+body main .add-task-and-list .list-of-tasks .task .checkbox-and-priority {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+body main .add-task-and-list .list-of-tasks .task .checkbox-and-priority div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+body main .add-task-and-list .list-of-tasks .task .checkbox-and-priority div input {
+    width: 20px;
+    height: 20px;
+}
+
+body main .add-task-and-list .list-of-tasks .task .checkbox-and-priority div label {
+    font-size: large;
+}
+
+/*  */
+
+body main .add-task-form {
+    display: none;
+    flex-direction: column;
+    min-width: min-content;
+    width: 25%;
+    gap: 30px;
+    align-self: center;
+    justify-self: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+body main .add-task-form label select,
+body main .add-task-form label input { 
+    padding-left: 5px;
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+body main .add-task-form button { 
+    width: 150px;
+    height: 30px;
+    justify-self: center;
+    align-self: center;
 }
