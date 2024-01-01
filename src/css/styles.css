@@ -122,7 +122,8 @@ body main .add-task-and-list .add-task {
     padding: 5px 20px;
 }
 
-body main .add-task-and-list .add-task button {
+body main .add-task-and-list .add-task button,
+main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button {
   background-color: transparent;
   border: 2px solid #1A1A1A;
   border-radius: 15px;
@@ -138,29 +139,34 @@ body main .add-task-and-list .add-task button {
   width: 100%;
 }
 
-body main .add-task-and-list .add-task button:hover {
+body main .add-task-and-list .add-task button:hover,
+main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button:hover {
   color: #06f;
   border-color: #06f;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
 
-body main .add-task-and-list .add-task button:active {
+body main .add-task-and-list .add-task button:active,
+main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button:hover:active {
   box-shadow: none;
   transform: translateY(0);
 }
 
 body main .add-task-and-list .list-of-tasks {
     display: grid;
-    grid-template-rows: 1fr;
     gap: 30px;
-    border-top: 2.5px solid #1e3a8a;
+    align-items: center;
+    justify-items: center;
+    border-top: 2.5px solid grey;
     max-height: 600px;
     overflow: scroll;
     padding: 25px;
 }
 
 body main .add-task-and-list .list-of-tasks .task {
+    min-height: 125px;
+    min-width: 400px;
     height: 120px;
     width: 100%;
     overflow: hidden;
@@ -173,25 +179,25 @@ body main .add-task-and-list .list-of-tasks .task {
 }
 
 body main .add-task-and-list .list-of-tasks .task .title-desc-date,
-body main .add-task-and-list .list-of-tasks .task .checkbox-and-priority {
+body main .add-task-and-list .list-of-tasks .task .checkbox-priority-del {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-body main .add-task-and-list .list-of-tasks .task .checkbox-and-priority div {
+body main .add-task-and-list .list-of-tasks .task .checkbox-priority-del .checkbox-div {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
 
-body main .add-task-and-list .list-of-tasks .task .checkbox-and-priority div input {
+body main .add-task-and-list .list-of-tasks .task .checkbox-priority-del .checkbox-div input {
     width: 20px;
     height: 20px;
 }
 
-body main .add-task-and-list .list-of-tasks .task .checkbox-and-priority div label {
+body main .add-task-and-list .list-of-tasks .task .checkbox-priority-del .checkbox-div label {
     font-size: large;
 }
 
@@ -224,4 +230,17 @@ body main .add-task-form button {
     height: 30px;
     justify-self: center;
     align-self: center;
+}
+
+main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button {
+    border: none;
+    min-height: 25px;
+    background-color: white;
+    border-radius: 10px;
+    color: red;
+}
+
+main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button:hover {
+    border-color: red;
+    color: red;
 }
