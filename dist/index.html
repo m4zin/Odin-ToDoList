@@ -52,16 +52,16 @@
         </div>
         <!-- Form stuff -->
         <form class="add-task-form">
-            <label for="title">Title (*)<br>
-                <input type="text" name="title" id="title" required>
+            <label for="title">Title <br>
+                <input type="text" name="title" id="title">
             </label>
             <label for="Description">Short Description (Max character length: 75)<br>
                 <input type="text" name="description" id="description" maxlength="75">
             </label>
-            <label for="date">Date (*)<br>
+            <label for="date">Date <br>
                 <input type="date" name="date" id="date">
             </label>
-            <label for="priority">Priority (*)<br>
+            <label for="priority">Priority <br>
                 <select name="priority" id="priority">
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
@@ -71,6 +71,28 @@
             <button type="button" class="task-submit-btn">Add Task</button>
             <button type="button" class="go-back">Go back</button>
         </form>
+
+        <form class="edit-task-info">
+            <label for="edited-title">Title <br>
+                <input type="text" name="edited-title" id="editedTitle">
+            </label>
+            <label for="edited-desc"> Short Description (Max character length: 75)<br>
+                <input type="text" name="edited-desc" id="editedDesc">
+            </label>
+            <label for="edited-date">Date <br>
+                <input type="date" name="edited-date" id="editedDate">
+            </label>
+            <label for="edited-priority">Priority <br>
+                <select name="edited-priority" id="editedPriority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+                </select> 
+            </label>
+            <button type="button" class="edit-task-submit-btn">Finish Edit</button>
+            <button type="button" class="cancel-btn">Cancel</button>
+        </form>
+
     </main>
 </body>
 </html>

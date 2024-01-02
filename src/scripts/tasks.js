@@ -88,15 +88,54 @@ function createTask() {
 }
 
 // Function to handle the delete button click
-function DeleteAndEdit(e) {
+function DeleteAndEditForm(e) {
+    // Box in main content area.
+    const addTaskAndListBox = document.querySelector('.add-task-and-list')
+    // Form to fill the task information.
+    const editTaskInfo = document.querySelector('.edit-task-info')
+    // Closes task item to clicked target.
+    const taskItem = e.target.closest('.task');
 
     // Deletion of task.
     if(e.target.className == 'del-task-btn') {
-        const taskItem = e.target.closest('.task');
+        console.log(taskItem)
         taskItem.remove();
     }
 
     // Editing of task.
+    if(e.target.className == 'edit-task-btn') {
+
+        let prevTaskInfo = retrievePrevTaskInfo(taskItem)
+
+        // Putting old vals into editing form
+        const inputTitle = document.getElementById('editedTitle')
+        inputTitle.value = prevTaskInfo.taskTitle
+        const inputDesc = document.getElementById('editedDesc')
+        inputDesc.value = prevTaskInfo.taskDesc
+
+        // Debug why date and priority not showing up in editing form vals
+            // const inputDate = document.getElementById('editedDate')
+            // inputDate.value = prevTaskInfo.taskDueDate
+            // const inputPriority = document.getElementById('editedPriority')
+            // inputPriority.value = prevTaskInfo.taskPriority
+
+        addTaskAndListBox.style.display = 'none'
+        editTaskInfo.style.display = 'flex'
+    }
 }
 
-export {createTask, DeleteAndEdit}
+function retrievePrevTaskInfo(taskItem) {
+    // Getting previous information
+    // Task Title
+    const taskTitle = taskItem.querySelector('.task-name').innerHTML
+    // Task desc
+    const taskDesc = taskItem.querySelector('.task-desc').innerHTML
+    // Task due date
+    const taskDueDate = taskItem.querySelector('.task-due-date').innerHTML
+    // Task priority
+    const taskPriority = taskItem.querySelector('.priority-level').innerHTML
+
+    return {taskTitle, taskDesc, taskDueDate, taskPriority}
+}
+
+export {createTask, DeleteAndEditForm}

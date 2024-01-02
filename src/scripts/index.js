@@ -1,5 +1,5 @@
-import {sendTaskForm, goBackToIndex} from './handleForm.js'
-import {createTask, DeleteAndEdit}  from './tasks.js'
+import {sendTaskForm, goBackToIndex, editFormVals} from './handleForm.js'
+import {createTask, DeleteAndEditForm}  from './tasks.js'
 
 // Sends a form to fill info for new task.
 const createTaskBtn = document.querySelector('.add-task-btn')
@@ -20,7 +20,7 @@ addTaskToList.addEventListener('click', () => {
 // Doing it this way because delete button of task is not added yet,
 // Until task is added.
 const parentElemOfList = document.querySelector('.list-of-tasks')
-parentElemOfList.addEventListener('click', DeleteAndEdit)
+parentElemOfList.addEventListener('click', DeleteAndEditForm)
 
 
 // Once user clicks on edit
