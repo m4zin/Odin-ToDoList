@@ -88,7 +88,7 @@ function createTask() {
 }
 
 // Function to handle the delete button click
-function DeleteAndEditForm(e) {
+function TaskDeleteAndEditForm(e) {
     // Box in main content area.
     const addTaskAndListBox = document.querySelector('.add-task-and-list')
     // Form to fill the task information.
@@ -98,7 +98,6 @@ function DeleteAndEditForm(e) {
 
     // Deletion of task.
     if(e.target.className == 'del-task-btn') {
-        console.log(taskItem)
         taskItem.remove();
     }
 
@@ -108,20 +107,57 @@ function DeleteAndEditForm(e) {
         let prevTaskInfo = retrievePrevTaskInfo(taskItem)
 
         // Putting old vals into editing form
+        // Title
         const inputTitle = document.getElementById('editedTitle')
         inputTitle.value = prevTaskInfo.taskTitle
+        // Description
         const inputDesc = document.getElementById('editedDesc')
         inputDesc.value = prevTaskInfo.taskDesc
+        // Date
+        const inputDate = document.getElementById('editedDate')
+        inputDate.value = prevTaskInfo.taskDueDate.slice(4)
+        // Priority
+        const inputPriority = document.getElementById('editedPriority')
 
-        // Debug why date and priority not showing up in editing form vals
-            // const inputDate = document.getElementById('editedDate')
-            // inputDate.value = prevTaskInfo.taskDueDate
-            // const inputPriority = document.getElementById('editedPriority')
-            // inputPriority.value = prevTaskInfo.taskPriority
+        if(prevTaskInfo.taskPriority.slice(0, 3) == 'low') {
+            inputPriority.value = prevTaskInfo.taskPriority.slice(0, 3)
+        } else if(prevTaskInfo.taskPriority.slice(0, 6) == 'medium') {
+            inputPriority.value = prevTaskInfo.taskPriority.slice(0, 6)
+        } else if(prevTaskInfo.taskPriority.slice(0, 4) == 'high') {
+            inputPriority.value = prevTaskInfo.taskPriority.slice(0, 4)
+        }
+
+        // The finishing edit button for task
+        const finishEditBtn = document.querySelector('.edit-task-submit-btn')
+        finishEditBtn.addEventListener('click', () => {
+            if(inputTitle.value && inputDesc.value && 
+                inputDate.value && inputPriority.value) {
+                 setEditedTaskInfo(inputTitle, inputDesc, inputDate, inputPriority, taskItem)
+             }
+            addTaskAndListBox.style.display = 'grid'
+            editTaskInfo.style.display = 'none'
+        })
 
         addTaskAndListBox.style.display = 'none'
         editTaskInfo.style.display = 'flex'
     }
+}
+
+function setEditedTaskInfo(editedTitle, editedDesc, editedDate, editedPriority, taskItem) {
+    // Task Title
+    const title = taskItem.querySelector('.task-name')
+    // Task desc
+    const desc = taskItem.querySelector('.task-desc')
+    // Task due date
+    const date = taskItem.querySelector('.task-due-date')
+    // Task priority
+    const priority = taskItem.querySelector('.priority-level')
+
+    // Now updating newly edited info.
+    title.innerHTML = editedTitle.value
+    desc.innerHTML = editedDesc.value
+    date.innerHTML = `Due ${editedDate.value}`
+    priority.innerHTML = `${editedPriority.value} priority`
 }
 
 function retrievePrevTaskInfo(taskItem) {
@@ -138,4 +174,4 @@ function retrievePrevTaskInfo(taskItem) {
     return {taskTitle, taskDesc, taskDueDate, taskPriority}
 }
 
-export {createTask, DeleteAndEditForm}
+export {createTask, TaskDeleteAndEditForm}

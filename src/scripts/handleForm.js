@@ -1,5 +1,3 @@
-import { DeleteAndEditForm } from "./tasks"
-
 function sendTaskForm(e) {
     // Box in main content area.
     const addTaskAndListBox = document.querySelector('.add-task-and-list')
