@@ -30,6 +30,18 @@ function getFormTaskInfo() {
     let dateVal = document.getElementById('date').value
     let priorityVal = document.getElementById('priority').value
 
+    if(titleVal == '') {
+        titleVal = 'Empty'
+    } 
+    
+    if(descVal == '') {
+        descVal = 'Empty'
+    }
+
+    if(dateVal == '') {
+        dateVal = 'date not mentioned.'
+    }
+
     const task = new createTask(
         titleVal,
         descVal,
@@ -38,6 +50,10 @@ function getFormTaskInfo() {
     )
 
     return task
+}
+
+function editTask() {
+    
 }
 
 export {sendTaskForm, goBackToIndex, getFormTaskInfo}

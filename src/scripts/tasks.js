@@ -59,16 +59,22 @@ function createTask() {
     const priorityLvl = document.createElement('p')
     priorityLvl.className = 'priority-level'
     priorityLvl.innerHTML = `${formInfo.priority} priority`
-    
+
     // Delete button for task
     const taskDelBtn = document.createElement('button')
     taskDelBtn.className = 'del-task-btn'
     taskDelBtn.innerHTML = 'Delete'
-    
+
+    // Edit button for task
+    const taskEditBtn = document.createElement('button')
+    taskEditBtn.className = 'edit-task-btn'
+    taskEditBtn.innerHTML = 'Edit'
+
     checkPriorDel.append(
         checkboxDiv,
         priorityLvl,
-        taskDelBtn
+        taskDelBtn,
+        taskEditBtn
     )
 
     task.append(
@@ -81,14 +87,16 @@ function createTask() {
     )
 }
 
-// function addTaskContent() {
-//     let formInfo = getFormTaskInfo()
+// Function to handle the delete button click
+function DeleteAndEdit(e) {
 
-//     // Task name, desc, due date, and priority value.
-//     document.querySelector('.task-name').innerHTML = formInfo.title
-//     document.querySelector('.task-desc').innerHTML = formInfo.desc
-//     document.querySelector('.priority-level').innerHTML = `${formInfo.priority} priority.`
-//     document.querySelector('.task-due-date').innerHTML = `Due ${formInfo.date}`
-// }
+    // Deletion of task.
+    if(e.target.className == 'del-task-btn') {
+        const taskItem = e.target.closest('.task');
+        taskItem.remove();
+    }
 
-export {createTask}
+    // Editing of task.
+}
+
+export {createTask, DeleteAndEdit}

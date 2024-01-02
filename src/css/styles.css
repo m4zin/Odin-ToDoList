@@ -167,7 +167,7 @@ body main .add-task-and-list .list-of-tasks {
 body main .add-task-and-list .list-of-tasks .task {
     min-height: 125px;
     min-width: 400px;
-    height: 120px;
+    height: 180px;
     width: 100%;
     overflow: hidden;
     background-color: #e5e7eb;
@@ -176,6 +176,7 @@ body main .add-task-and-list .list-of-tasks .task {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
+    border-left: 15px solid #06f;
 }
 
 body main .add-task-and-list .list-of-tasks .task .title-desc-date,
@@ -243,4 +244,17 @@ main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button {
 main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button:hover {
     border-color: red;
     color: red;
+}
+
+main .add-task-and-list .list-of-tasks .task .checkbox-priority-del .edit-task-btn {
+    border: none;
+    min-height: 25px;
+    background-color: white;
+    border-radius: 10px;
+    color: #06f;
+}
+
+main .add-task-and-list .list-of-tasks .task .checkbox-priority-del .edit-task-btn:hover {
+    border-color: #06f;
+    color: #06f;
 }
