@@ -13,10 +13,10 @@
 body {
     height: 100vh;
     display: grid;
-    grid-template-columns: minmax(min-content, 15%) 85%;
+    grid-template-columns: 2fr 10fr;
 }
 
-body nav {
+body aside {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 10fr;
@@ -27,37 +27,39 @@ body nav {
     position: relative;
 }
 
-body nav .logo h1 {
+body aside .logo h1 {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
     color: #3730a3;
 }
 
-body nav .tasks-and-projects {
+body aside .tasks-and-projects {
     display: flex;
     flex-direction: column;
     gap: 50px;
 }
 
-body nav .tasks-and-projects .tasks {
+body aside .tasks-and-projects .tasks {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-nav .tasks-and-projects .tasks button {
+aside .tasks-and-projects .tasks button,
+aside .tasks-and-projects .projects .added-projects button {
     height: 48px;
     min-width: 140px;
 }
 
-nav .tasks-and-projects .projects button {
+aside .tasks-and-projects .projects .title-and-addBtn button {
     height: 50px;
     min-width: 50px;
 }
 
-nav .tasks-and-projects .tasks button,
-nav .tasks-and-projects .projects button,
+aside .tasks-and-projects .tasks button,
+aside .tasks-and-projects .projects .added-projects button,
+aside .tasks-and-projects .projects .title-and-addBtn button,
 body main .add-task-form button,
 body main .edit-task-info button {
     align-items: center;
@@ -74,8 +76,9 @@ body main .edit-task-info button {
     transition: all .3s;
 }
 
-nav .tasks-and-projects .tasks button:hover,
-nav .tasks-and-projects .projects button:hover,
+aside .tasks-and-projects .tasks button:hover,
+aside .tasks-and-projects .projects .added-projects button:hover,
+aside .tasks-and-projects .projects .title-and-addBtn button:hover,
 body main .add-task-form button:hover,
 body main .edit-task-info button:hover {
     border-color: #06f;
@@ -85,8 +88,9 @@ body main .edit-task-info button:hover {
     fill: #06f;
 }
 
-nav .tasks-and-projects .tasks button:active,
-nav .tasks-and-projects .projects button:active,
+aside .tasks-and-projects .tasks button:active,
+aside .tasks-and-projects .projects .added-projects button:active,
+aside .tasks-and-projects .projects .title-and-addBtn button:active,
 body main .add-task-form button:active,
 body main .edit-task-info button:active {
     border-color: #06f;
@@ -95,7 +99,13 @@ body main .edit-task-info button:active {
     transform: translateY(0);
 }
 
-nav .tasks-and-projects .projects {
+aside .tasks-and-projects .projects {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+aside .tasks-and-projects .projects .title-and-addBtn {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -265,3 +275,53 @@ main .add-task-and-list .list-of-tasks .task .checkbox-priority-del .edit-task-b
     border-color: #06f;
     color: #06f;
 }
+
+aside .tasks-and-projects .type-proj-name  {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+}
+
+aside .tasks-and-projects .type-proj-name input {
+    height: 35px;
+    width: 100%;
+    padding-left: 5px;
+    border: 1px solid #6b7280;
+    border-radius: 5px;
+    background-color: #f3f4f6;
+}
+
+aside .tasks-and-projects .type-proj-name button {
+    align-self: center;
+    height: 25px;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+aside .tasks-and-projects .type-proj-name button:hover {
+    transition: 0.3s;
+    border: 1px solid #06f;
+    background-color: white;
+    color: #06f;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transform: scale(1.1);
+}
+
+aside .tasks-and-projects .type-proj-name button:active {
+    transition: 0.3s;
+    transform: scale(0.95);
+}
+
+aside .tasks-and-projects .projects .added-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+} 
+
+aside .tasks-and-projects .output-error {
+    display: none;
+    color: red;
+    text-align: center;
+} 
