@@ -118,7 +118,8 @@ body main {
     background-color: #d4d4d8;
 }
 
-body main .add-task-and-list {
+body main .add-task-and-list,
+main .add-task-to-proj {
     display: grid;
     grid-template-rows: 20% 80%;
     height: 60%;
@@ -128,7 +129,8 @@ body main .add-task-and-list {
     border-radius: 10px;
 }
 
-body main .add-task-and-list .add-task {
+body main .add-task-and-list .add-task,
+body main .add-task-to-proj .proj-heading-add-task-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,7 +138,9 @@ body main .add-task-and-list .add-task {
 }
 
 body main .add-task-and-list .add-task button,
-main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button {
+body main .add-task-to-proj .proj-heading-add-task-btn button,
+main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button,
+main .add-task-to-proj .proj-tasks .proj-task .proj-checkbox-priority-del button {
   background-color: transparent;
   border: 2px solid #1A1A1A;
   border-radius: 15px;
@@ -153,7 +157,10 @@ main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button {
 }
 
 body main .add-task-and-list .add-task button:hover,
-main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button:hover {
+body main .add-task-to-proj .proj-heading-add-task-btn button:hover,
+main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button:hover,
+main .add-task-to-proj .proj-tasks .proj-task .proj-checkbox-priority-del button:hover
+ {
   color: #06f;
   border-color: #06f;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
@@ -161,12 +168,15 @@ main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button:hover
 }
 
 body main .add-task-and-list .add-task button:active,
-main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button:hover:active {
+body main .add-task-to-proj .proj-heading-add-task-btn button:active,
+main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button:active,
+main .add-task-to-proj .proj-tasks .proj-task .proj-checkbox-priority-del button:active {
   box-shadow: none;
   transform: translateY(0);
 }
 
-body main .add-task-and-list .list-of-tasks {
+body main .add-task-and-list .list-of-tasks,
+body main .add-task-to-proj .proj-tasks {
     display: grid;
     gap: 30px;
     align-items: center;
@@ -177,7 +187,8 @@ body main .add-task-and-list .list-of-tasks {
     padding: 25px;
 }
 
-body main .add-task-and-list .list-of-tasks .task {
+body main .add-task-and-list .list-of-tasks .task,
+body main .add-task-to-proj .proj-tasks .proj-task {
     min-height: 125px;
     min-width: 400px;
     height: 180px;
@@ -193,25 +204,30 @@ body main .add-task-and-list .list-of-tasks .task {
 }
 
 body main .add-task-and-list .list-of-tasks .task .title-desc-date,
+body main .add-task-to-proj .proj-tasks .proj-task .proj-title-desc-date,
+body main .add-task-to-proj .proj-tasks .proj-task .proj-checkbox-priority-del,
 body main .add-task-and-list .list-of-tasks .task .checkbox-priority-del {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-body main .add-task-and-list .list-of-tasks .task .checkbox-priority-del .checkbox-div {
+body main .add-task-and-list .list-of-tasks .task .checkbox-priority-del .checkbox-div,
+body main .add-task-to-proj .proj-tasks .proj-task .proj-checkbox-priority-del .proj-checkbox-div {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
 
-body main .add-task-and-list .list-of-tasks .task .checkbox-priority-del .checkbox-div input {
+body main .add-task-and-list .list-of-tasks .task .checkbox-priority-del .checkbox-div input,
+body main .add-task-to-proj .proj-tasks .proj-task .proj-checkbox-priority-del .proj-checkbox-div input {
     width: 20px;
     height: 20px;
 }
 
-body main .add-task-and-list .list-of-tasks .task .checkbox-priority-del .checkbox-div label {
+body main .add-task-and-list .list-of-tasks .task .checkbox-priority-del .checkbox-div label
+body main .add-task-to-proj .proj-tasks .proj-task .proj-checkbox-priority-del .proj-checkbox-div label {
     font-size: large;
 }
 
@@ -250,7 +266,9 @@ body main .edit-task-info button {
     align-self: center;
 }
 
-main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button {
+main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button,
+main .add-task-to-proj .proj-tasks .proj-task .proj-checkbox-priority-del button
+ {
     border: none;
     min-height: 25px;
     background-color: white;
@@ -258,12 +276,14 @@ main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button {
     color: red;
 }
 
-main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button:hover {
+main .add-task-and-list .list-of-tasks .task .checkbox-priority-del button:hover,
+main .add-task-to-proj .proj-tasks .proj-task .proj-checkbox-priority-del button:hover {
     border-color: red;
     color: red;
 }
 
-main .add-task-and-list .list-of-tasks .task .checkbox-priority-del .edit-task-btn {
+main .add-task-and-list .list-of-tasks .task .checkbox-priority-del .edit-task-btn,
+main .add-task-to-proj .proj-tasks .proj-task .proj-checkbox-priority-del .proj-edit-task-btn {
     border: none;
     min-height: 25px;
     background-color: white;
@@ -271,7 +291,8 @@ main .add-task-and-list .list-of-tasks .task .checkbox-priority-del .edit-task-b
     color: #06f;
 }
 
-main .add-task-and-list .list-of-tasks .task .checkbox-priority-del .edit-task-btn:hover {
+main .add-task-and-list .list-of-tasks .task .checkbox-priority-del .edit-task-btn:hover,
+main .add-task-to-proj .proj-tasks .proj-task .proj-checkbox-priority-del .proj-edit-task-btn:hover {
     border-color: #06f;
     color: #06f;
 }
@@ -325,3 +346,8 @@ aside .tasks-and-projects .output-error {
     color: red;
     text-align: center;
 } 
+
+body main .add-task-to-proj .proj-heading-add-task-btn {
+    flex-direction: column;
+    gap: 20px;
+}
