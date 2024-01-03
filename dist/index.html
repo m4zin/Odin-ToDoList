@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,89 +8,37 @@
     <link rel="stylesheet" href="/src/css/styles.css">
     <script src="main.js" defer></script>
 </head>
+
 <body>
+
     <aside>
         <div class="logo">
             <h1>DoTheToDo.</h1>
         </div>
-        <div class="tasks-and-projects">
+        <div class="quick-tasks">
             <div class="tasks">
-                <h1>Tasks</h1>
-                <button>Quick tasks for today</button>
-            </div>
-            <div class="projects">
-                <div class="title-and-addBtn">
-                    <h1>Projects</h1>
-                    <button class="add-proj-btn">+</button>
-                </div>
-                <div class="added-projects">
-                    
-                </div>
-            </div>
-            <!-- Getting project name -->
-            <div class="type-proj-name">
-                <label for="proj-name">Project Name</label><br>
-                <input type="text" name="proj-name" id="projName">
-                <button class="submit-btn-proj" type="button">Enter</button>
-            </div>
-            <!-- Outputting error when projects len reached. -->
-            <div class="output-error">
-                <p>Projects limit reached!</p>
+                <button class="quick-tasks-btn">Quick tasks for today</button>
+                <button class="projects-btn">Projects</button>
             </div>
         </div>
     </aside>
+
     <main>
-        <!-- <div class="add-task-and-list">
-            Adding task and displaying list of tasks.
+        <div class="add-task-and-list">
+            <!-- Adding task and displaying list of tasks. -->
             <div class="add-task">
+                <h3>Tasks for today.</h3>
                 <button class="add-task-btn">Click me to add a task +</button>
             </div>
+            <!-- For appending task. -->
             <div class="list-of-tasks">
-                <div class="task">
-                    <div class="title-desc-date">
-                        <h2 class="task-name">Task</h2>
-                        <h3 class="task-desc">012345678901234567890123456789012345678901234567890123456789012345678901234</h3>
-                        <p class="task-due-date">Due 20/12/2002</p>
-                    </div>
-                    <div class="checkbox-priority-del">
-                        <div class="checkbox-div">
-                            <input type="checkbox" name="checkbox" id="checkbox">
-                            <label for="checkbox">Done</label>
-                        </div>
-                        <p class="priority-level">High Priority</p>
-                        <button class="del-task-btn">Delete</button>
-                        <button class="edit-task-btn">Edit</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <div class="add-task-to-proj">
-            <div class="proj-heading-add-task-btn">
-                <h3>Your Project</h3>
-                <button>Click me to add a task to this project +</button>
-            </div>
-            <div class="proj-tasks">
-                <!-- <div class="proj-task">
-                    <div class="proj-title-desc-date">
-                        <h2 class="proj-task-name">Task</h2>
-                        <h3 class="proj-task-desc">012345678901234567890123456789012</h3>
-                        <p class="proj-task-due-date">Due 20/12/2002</p>
-                    </div>
-                    <div class="proj-checkbox-priority-del">
-                        <div class="proj-checkbox-div">
-                            <input type="checkbox" name="proj-checkbox" id="projCheckbox">
-                            <label for="proj-checkbox">Done</label>
-                        </div>
-                        <p class="proj-priority-level">High Priority</p>
-                        <button class="proj-del-task-btn">Delete</button>
-                        <button class="proj-edit-task-btn">Edit</button>
-                    </div>
-                </div> -->
+
             </div>
         </div>
 
-        </div>
         <!-- Form stuff -->
+
+        <!-- For adding task -->
         <form class="add-task-form">
             <label for="title">Title <br>
                 <input type="text" name="title" id="title">
@@ -102,15 +51,16 @@
             </label>
             <label for="priority">Priority <br>
                 <select name="priority" id="priority">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-                </select> 
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
             </label>
             <button type="button" class="task-submit-btn">Add Task</button>
             <button type="button" class="go-back">Go back</button>
         </form>
 
+        <!-- For editing task -->
         <form class="edit-task-info">
             <label for="edited-title">Title <br>
                 <input type="text" name="edited-title" id="editedTitle">
@@ -123,15 +73,16 @@
             </label>
             <label for="edited-priority">Priority <br>
                 <select name="edited-priority" id="editedPriority">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-                </select> 
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
             </label>
             <button type="button" class="edit-task-submit-btn">Finish Edit</button>
             <button type="button" class="cancel-btn">Cancel</button>
         </form>
-
     </main>
+    
 </body>
+
 </html>

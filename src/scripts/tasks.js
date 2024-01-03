@@ -1,5 +1,11 @@
 import { getFormTaskInfo } from "./handleForm"
 
+function showQuickTasks() {
+    // Display box in main content area.
+    const addTaskAndListBox = document.querySelector('.add-task-and-list')
+    addTaskAndListBox.style.display = 'grid'
+}
+
 function createTask() {
     // Info from form
     let formInfo = getFormTaskInfo()
@@ -97,12 +103,12 @@ function TaskDeleteAndEditForm(e) {
     const taskItem = e.target.closest('.task');
 
     // Deletion of task.
-    if(e.target.className == 'del-task-btn') {
+    if (e.target.className == 'del-task-btn') {
         taskItem.remove();
     }
 
     // Editing of task.
-    if(e.target.className == 'edit-task-btn') {
+    if (e.target.className == 'edit-task-btn') {
 
         let prevTaskInfo = retrievePrevTaskInfo(taskItem)
 
@@ -119,21 +125,21 @@ function TaskDeleteAndEditForm(e) {
         // Priority
         const inputPriority = document.getElementById('editedPriority')
 
-        if(prevTaskInfo.taskPriority.slice(0, 3) == 'low') {
+        if (prevTaskInfo.taskPriority.slice(0, 3) == 'low') {
             inputPriority.value = prevTaskInfo.taskPriority.slice(0, 3)
-        } else if(prevTaskInfo.taskPriority.slice(0, 6) == 'medium') {
+        } else if (prevTaskInfo.taskPriority.slice(0, 6) == 'medium') {
             inputPriority.value = prevTaskInfo.taskPriority.slice(0, 6)
-        } else if(prevTaskInfo.taskPriority.slice(0, 4) == 'high') {
+        } else if (prevTaskInfo.taskPriority.slice(0, 4) == 'high') {
             inputPriority.value = prevTaskInfo.taskPriority.slice(0, 4)
         }
 
         // The finishing edit button for task
         const finishEditBtn = document.querySelector('.edit-task-submit-btn')
         finishEditBtn.addEventListener('click', () => {
-            if(inputTitle.value && inputDesc.value && 
+            if (inputTitle.value && inputDesc.value &&
                 inputDate.value && inputPriority.value) {
-                 setEditedTaskInfo(inputTitle, inputDesc, inputDate, inputPriority, taskItem)
-             }
+                setEditedTaskInfo(inputTitle, inputDesc, inputDate, inputPriority, taskItem)
+            }
             addTaskAndListBox.style.display = 'grid'
             editTaskInfo.style.display = 'none'
         })
@@ -171,7 +177,7 @@ function retrievePrevTaskInfo(taskItem) {
     // Task priority
     const taskPriority = taskItem.querySelector('.priority-level').innerHTML
 
-    return {taskTitle, taskDesc, taskDueDate, taskPriority}
+    return { taskTitle, taskDesc, taskDueDate, taskPriority }
 }
 
-export {createTask, TaskDeleteAndEditForm}
+export { createTask, TaskDeleteAndEditForm, showQuickTasks }

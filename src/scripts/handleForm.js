@@ -14,7 +14,7 @@ function goBackToIndex() {
     const formInfoFill = document.querySelector('.add-task-form')
 
     formInfoFill.style.display = 'none'
-    addTaskAndListBox.style.display = 'grid'    
+    addTaskAndListBox.style.display = 'grid'
 }
 
 function createTask(title, desc, date, priority) {
@@ -30,15 +30,15 @@ function getFormTaskInfo() {
     let dateVal = document.getElementById('date').value
     let priorityVal = document.getElementById('priority').value
 
-    if(titleVal == '') {
+    if (titleVal == '') {
         titleVal = 'Empty'
-    } 
-    
-    if(descVal == '') {
+    }
+
+    if (descVal == '') {
         descVal = 'Empty'
     }
 
-    if(dateVal == '') {
+    if (dateVal == '') {
         dateVal = 'date not mentioned.'
     }
 
@@ -52,4 +52,4 @@ function getFormTaskInfo() {
     return task
 }
 
-export {sendTaskForm, goBackToIndex, getFormTaskInfo}
+export { sendTaskForm, goBackToIndex, getFormTaskInfo }

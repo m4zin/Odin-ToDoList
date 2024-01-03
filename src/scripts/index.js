@@ -1,6 +1,9 @@
-import {sendTaskForm, goBackToIndex} from './handleForm.js'
-import {createTask, TaskDeleteAndEditForm}  from './tasks.js'
-import { getProjName } from './projects.js'
+import { sendTaskForm, goBackToIndex } from './handleForm.js'
+import { createTask, TaskDeleteAndEditForm, showQuickTasks } from './tasks.js'
+
+// Today's quick tasks btn
+const quickTasksBtn = document.querySelector('.quick-tasks-btn')
+quickTasksBtn.addEventListener('click', showQuickTasks)
 
 // Sends a form to fill info for new task.
 const createTaskBtn = document.querySelector('.add-task-btn')
@@ -23,18 +26,6 @@ addTaskToList.addEventListener('click', () => {
 const parentElemOfList = document.querySelector('.list-of-tasks')
 parentElemOfList.addEventListener('click', TaskDeleteAndEditForm)
 
-const parentElemOfAddProj = document.querySelector('.tasks-and-projects')
-parentElemOfAddProj.addEventListener('click', getProjName)
 
-// What is left?
-    // Addition of projects, each project can contain it's own tasks added by user.
-// How do we go about it?
-    // First the user creates a project and names it.
-    // Then the user will have the same functionality they had in creating -
-    // Tasks for today, but for each new project instead.
-    // Main thing to consider is how to implement it so that, each project will -
-    // contain it's own set of tasks that the user creates.
-    // Also figure out how we can re-use the code we created till now for it,
-    // without having to create new files and shit.
 
 
